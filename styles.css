@@ -1,0 +1,29 @@
+:root {
+  --bg: #10002b;
+  --pri: #c77dff;
+  --sec: #9d4edd;
+  --tri: #3c096c;
+  --txt: #eed1ff;
+}
+
+html {
+  background: var(--bg);
+  color: var(--txt);
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--tri);
+}
+
+nav #logo {
+  height: 40px;
+  margin: 5px;
+}
