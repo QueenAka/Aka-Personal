@@ -1,14 +1,18 @@
 :root {
-  --bg: #08000f;
+  --bg: #0a001a;
   --pri: #c77dff;
   --sec: #9d4edd;
-  --tri: #3c096c;
+  --tri: #7614af;
   --txt: #eed1ff;
 }
 
 html {
   background: var(--bg);
   color: var(--txt);
+  font-family: monospace;
+  height: calc(100% - 60px);
+  padding: 5px;
+  padding-top: 55px;
 }
 
 nav {
@@ -26,4 +30,30 @@ nav {
 nav #logo {
   height: 40px;
   margin: 5px;
+}
+
+main .profile {
+  width: calc(50% - 10px);
+  padding: 5px;
+  border-radius: 5px;
+  background: var(--tri);
+  position: relative;
+}
+
+main .profile img {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+}
+
+main .profile .username {
+  width: 100px;
+  height: 18px;
+  display: block;
+  position: absolute;
+  top: 15px;
+  left: 85px;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 18px;
 }
