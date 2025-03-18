@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
   <body>
-    <akap id="nav"></akap>
+    <nav>
+      <img id="logo" src="./media/large.svg" alt="Starstruct" />
+      <div id="items"></div>
+    </nav>
     <main>
       <div class="profile">
         <img src="./media/pfp.png" />
@@ -40,10 +43,25 @@
         >
       </div>
     </main>
-    <script src="https://queenaka.github.io/akap/akap.js"></script>
     <script>
-      const akap = new Parts("parts");
-      akap.run();
+      function adjustLogo() {
+        const nav = document.querySelector("nav");
+        const logo = document.getElementById("logo");
+        const items = document.getElementById("items");
+
+        if (logo && items && nav) {
+          const totalWidth = logo.offsetWidth + items.offsetWidth;
+          console.log(totalWidth);
+          logo.src =
+            totalWidth > nav.offsetWidth
+              ? "./media/small.svg"
+              : "./media/large.svg";
+        }
+      }
+
+      adjustLogo();
+      window.addEventListener("resize", adjustLogo);
+      window.addEventListener("load", adjustLogo);
     </script>
   </body>
 </html>

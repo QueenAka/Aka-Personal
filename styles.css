@@ -1,8 +1,8 @@
 :root {
-  --bg: #0a001a;
+  --bg: #1E2124;
   --pri: #c77dff;
-  --sec: #9d4edd;
-  --tri: #7614af;
+  --sec: #26292E;
+  --tri: #131517;
   --txt: #eed1ff;
 }
 
@@ -28,6 +28,7 @@ nav {
 }
 
 nav #logo {
+  width: fit-content;
   height: 40px;
   margin: 5px;
 }
