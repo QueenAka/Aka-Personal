@@ -12,13 +12,21 @@
     </nav>
     <main>
       <div class="profile">
-        <img src="./media/pfp.png" />
-        <span class="username"
-          >Aka - Ariah - Lexi - Melody - Valerie - Cotton Candy - Rina
-        </span>
+        <img src="./media/pfp.png" class="pfp" />
+        <div class="username">
+          <div class="scrolling-names">
+            <span>Aka</span><span>Ariah</span><span>Lexi</span
+            ><span>Melody</span><span>Valerie</span><span>Cotton Candy</span
+            ><span>Rina</span><span>Aka</span>
+          </div>
+        </div>
         <span class="pronouns">She / Her</span>
+        <span class="time"><span id="time"></span></span>
+        <span class="flags"
+          ><img src="./media/pan.webp" /><img src="./media/demi.webp" /><img
+            src="./media/auto.webp" /><img src="./media/trans.webp"
+        /></span>
         <span class="bio"></span>
-        <p>Currently <span class="time"></span> for me</p>
       </div>
       <div class="links">
         <a
@@ -50,7 +58,7 @@
         const items = document.getElementById("items");
 
         if (logo && items && nav) {
-          const totalWidth = logo.offsetWidth + items.offsetWidth;
+          const totalWidth = 270 + items.offsetWidth;
           console.log(totalWidth);
           logo.src =
             totalWidth > nav.offsetWidth
@@ -62,6 +70,40 @@
       adjustLogo();
       window.addEventListener("resize", adjustLogo);
       window.addEventListener("load", adjustLogo);
+
+      const namesContainer = document.querySelector(".scrolling-names");
+      const names = namesContainer.querySelectorAll("span");
+      let currentIndex = 1;
+
+      function scrollNames() {
+        namesContainer.style.transform = `translateY(-${currentIndex * 32}px)`;
+        namesContainer.style.transition = "transform 0.5s ease";
+
+        currentIndex++;
+        if (currentIndex >= names.length) {
+          setTimeout(() => {
+            namesContainer.style.transition = "none";
+            namesContainer.style.transform = "translateY(0)";
+            currentIndex = 1;
+          }, 500);
+        }
+      }
+
+      setInterval(scrollNames, 2000);
+
+      function updateTime() {
+        const now = new Date();
+        const options = {
+          timeZone: "America/New_York",
+          hour: "numeric",
+          minute: "2-digit",
+        };
+        const newYorkTime = now.toLocaleTimeString("en-US", options);
+        document.getElementById("time").textContent = newYorkTime;
+      }
+
+      updateTime();
+      setInterval(updateTime, 5000);
     </script>
   </body>
 </html>

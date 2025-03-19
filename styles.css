@@ -34,27 +34,86 @@ nav #logo {
 }
 
 main .profile {
-  width: calc(50% - 10px);
-  padding: 5px;
-  border-radius: 5px;
+  width: calc(50% - 20px);
+  padding: 10px;
+  border-radius: 10px;
   background: var(--tri);
   position: relative;
 }
 
-main .profile img {
-  width: 75px;
-  height: 75px;
+main .profile .pfp {
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
 }
 
 main .profile .username {
-  width: 100px;
+  width: 200px;
+  height: 32px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 120px;
+  overflow: hidden;
+  font-size: 22px;
+}
+
+main .profile .pronouns {
   height: 18px;
   display: block;
   position: absolute;
-  top: 15px;
-  left: 85px;
-  overflow: hidden;
-  white-space: nowrap;
+  top: 41px;
+  left: 120px;
   font-size: 18px;
+}
+
+main .profile .time {
+  height: 18px;
+  display: block;
+  position: absolute;
+  top: 63px;
+  left: 120px;
+  font-size: 18px;
+}
+
+main .profile .username::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, var(--tri) 0%, #00000000 100%);
+  width: 200px;
+  height: 7px;
+}
+
+main .profile .username::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(0deg, var(--tri) 0%, #00000000 100%);
+  width: 200px;
+  height: 7px;
+}
+
+main .profile .username .scrolling-names span {
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  width: 100%;
+}
+
+main .profile .flags {
+  width: 100%;
+  height: 25px;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  top: 85px;
+  left: 117.5px;
+}
+
+main .profile .flags img {
+  height: 22.5px;
+  margin: 2.5px;
 }
